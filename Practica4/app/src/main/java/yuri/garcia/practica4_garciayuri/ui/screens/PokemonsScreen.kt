@@ -16,10 +16,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import yuri.garcia.practica4_garciayuri.model.samplePokemon
+import yuri.garcia.practica4_garciayuri.model.selectedPokemon
 import yuri.garcia.practica4_garciayuri.ui.components.PokemonCard
 
 @Composable
-fun PokemonScreens(){
+fun PokemonScreens(
+    onDetailSucces: () -> Unit
+){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -36,7 +39,13 @@ fun PokemonScreens(){
         LazyColumn() { //Lista dinámica de pokémons
             items(items = samplePokemon){
                 pokemon ->
-                PokemonCard(pokemon)
+                PokemonCard(
+                    pokemon = pokemon,
+                    onClick = {
+                        selectedPokemon = pokemon
+                        onDetailSucces()
+                    }
+                )
             }
         }
     }
@@ -45,5 +54,5 @@ fun PokemonScreens(){
 @Preview(showBackground = true)
 @Composable
 fun PokemonScreensPreview(){
-    PokemonScreens()
+    PokemonScreens({})
 }

@@ -25,12 +25,15 @@ import yuri.garcia.practica4_garciayuri.R
 import yuri.garcia.practica4_garciayuri.model.Pokemon
 
 @Composable
-fun PokemonCard(pokemon: Pokemon){
+fun PokemonCard(
+    pokemon: Pokemon,
+    onClick: () -> Unit
+){
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(12.dp)
-            .clickable(){},
+            .clickable{ onClick() },
         elevation = CardDefaults.cardElevation(8.dp)
     ) {
         Row(
@@ -74,6 +77,7 @@ fun PokemonCard(pokemon: Pokemon){
 fun PokemonCardPreview(){
     PokemonCard(
         Pokemon(1, "Zeraora", 807, "Eléctrico", 1.5, 44.5, R.drawable.zeraora,
-            "Las almohadillas de sus patas desprenden descargas eléctricas. Cuando corre, hace que los rayos caigan y que los truenos resuenen.")
+            "Las almohadillas de sus patas desprenden descargas eléctricas. Cuando corre, hace que los rayos caigan y que los truenos resuenen."),
+        onClick = {}
     )
 }

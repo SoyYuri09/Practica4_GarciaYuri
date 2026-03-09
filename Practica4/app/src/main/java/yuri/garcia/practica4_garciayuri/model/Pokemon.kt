@@ -39,3 +39,5 @@ val samplePokemon = listOf(
     Pokemon(12, "Fletchling", 661, "Normal / Volador", 0.3, 1.7, R.drawable.fletchling,
         "Por lo general se muestra calmado, pero, al entrar en combate, su equilibrio hormonal se altera y se vuelve agresivo.")
 )
+
+var selectedPokemon: Pokemon? = null

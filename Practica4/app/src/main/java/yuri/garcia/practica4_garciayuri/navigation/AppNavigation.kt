@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.*
 import androidx.navigation.compose.rememberNavController
 import yuri.garcia.practica4_garciayuri.ui.screens.LoginScreen
+import yuri.garcia.practica4_garciayuri.ui.screens.PokemonDetail
 import yuri.garcia.practica4_garciayuri.ui.screens.PokemonScreens
 
 @Composable
@@ -15,7 +16,10 @@ fun AppNavigation() {
             LoginScreen({navController.navigate(Routes.POKEMON_LIST_SCREEN)})
         }
         composable(Routes.POKEMON_LIST_SCREEN){
-            PokemonScreens()
+            PokemonScreens({navController.navigate(Routes.POKEMON_DETAIL)})
+        }
+        composable(Routes.POKEMON_DETAIL){
+            PokemonDetail()
         }
     }
 

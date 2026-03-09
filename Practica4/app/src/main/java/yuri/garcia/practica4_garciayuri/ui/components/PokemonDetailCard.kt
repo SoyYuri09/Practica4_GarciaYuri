@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -26,52 +27,74 @@ import yuri.garcia.practica4_garciayuri.model.Pokemon
 
 @Composable
 fun PokemonDetailCard(pokemon: Pokemon) {
-    Card(
-        modifier = Modifier
-            .width(190.dp)
-            .height(120.dp)
-            .padding(12.dp),
-        elevation = CardDefaults.cardElevation(8.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = colorResource(R.color.blue)
-        )
+    Column(
+        modifier = Modifier.padding(12.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
+        Card(
+            modifier = Modifier
+                .width(240.dp)
+                .height(240.dp)
+                .padding(bottom = 8.dp),
+            elevation = CardDefaults.cardElevation(6.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = colorResource(R.color.white)
+            )
         ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Row(
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(
-                            text = "Altura:",
-                            color = colorResource(R.color.white)
-                        )
-                        Spacer(modifier = Modifier.height(2.dp))
-                        Text(text = "${pokemon.height} m")
-                    }
-                    Spacer(modifier = Modifier.width(26.dp))
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(
-                            text = "Peso:",
-                            color = colorResource(R.color.white)
-                        )
-                        Spacer(modifier = Modifier.height(2.dp))
-                        Text(text = "${pokemon.weight} kg")
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(10.dp))
-
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = pokemon.description,
+                    color = colorResource(R.color.black),
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(12.dp)
+                )
+            }
+        }
+        Card(
+            modifier = Modifier
+                .width(240.dp)
+                .height(170.dp),
+            elevation = CardDefaults.cardElevation(8.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = colorResource(R.color.blue)
+            )
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(
-                        text = "Tipo:",
-                        color = colorResource(R.color.white)
-                    )
-                    Spacer(modifier = Modifier.height(2.dp))
-                    Text(text = pokemon.type)
+                    Row(horizontalArrangement = Arrangement.Center) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Text(
+                                text = "Altura:",
+                                color = colorResource(R.color.white)
+                            )
+                            Spacer(modifier = Modifier.height(2.dp))
+                            Text(text = "${pokemon.height} m")
+                        }
+                        Spacer(modifier = Modifier.width(26.dp))
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Text(
+                                text = "Peso:",
+                                color = colorResource(R.color.white)
+                            )
+                            Spacer(modifier = Modifier.height(2.dp))
+                            Text(text = "${pokemon.weight} kg")
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(
+                            text = "Tipo:",
+                            color = colorResource(R.color.white)
+                        )
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Text(text = pokemon.type)
+                    }
                 }
             }
         }
