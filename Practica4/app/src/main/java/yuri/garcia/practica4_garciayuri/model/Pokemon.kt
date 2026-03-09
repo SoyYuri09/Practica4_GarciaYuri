@@ -4,11 +4,11 @@ import yuri.garcia.practica4_garciayuri.R
 
 data class Pokemon(
     val id: Int,
-    val nombre: String,
+    val name: String,
     val numPkdx: Int,
-    val tipo: String,
-    val altura: Double,
-    val peso: Double,
+    val type: String,
+    val height: Double,
+    val weight: Double,
     val imageRes: Int = 0
 )
 
