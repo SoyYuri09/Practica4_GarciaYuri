@@ -9,13 +9,17 @@ data class Pokemon(
     val type: String,
     val height: Double,
     val weight: Double,
-    val imageRes: Int = 0
+    val imageRes: Int = 0,
+    val description: String
 )
 
 val samplePokemon = listOf(
-    Pokemon(1, "Zeraora", 807, "Eléctrico", 1.5, 44.5, R.drawable.zeraora),
-    Pokemon(2, "Sprigatito", 906, "Planta", 0.4, 4.1, R.drawable.sprigatito),
-    Pokemon(3, "Meowscarada", 908, "Planta / Siniestro", 1.5, 31.2, R.drawable.meowscarada),
+    Pokemon(1, "Zeraora", 807, "Eléctrico", 1.5, 44.5, R.drawable.zeraora,
+        "Las almohadillas de sus patas desprenden descargas eléctricas. Cuando corre, hace que los rayos caigan y que los truenos resuenen."),
+    Pokemon(2, "Sprigatito", 906, "Planta", 0.4, 4.1, R.drawable.sprigatito,
+        "Su sedoso pelaje se asemeja en composición a las plantas. Se lava la cara con diligencia para que no se le seque."),
+    Pokemon(3, "Meowscarada", 908, "Planta / Siniestro", 1.5, 31.2, R.drawable.meowscarada,
+        ""),
     Pokemon(4, "Riolu", 447, "Lucha", 0.7, 20.2, R.drawable.riolu),
     Pokemon(5, "Lucario", 448, "Lucha / Acero", 1.2, 54.0, R.drawable.lucario),
     Pokemon(6, "Zorua", 570, "Siniestro", 0.7, 12.5, R.drawable.zorua),

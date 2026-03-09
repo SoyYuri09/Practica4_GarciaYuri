@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.*
 import androidx.navigation.compose.rememberNavController
 import yuri.garcia.practica4_garciayuri.ui.screens.LoginScreen
+import yuri.garcia.practica4_garciayuri.ui.screens.PokemonScreens
 
 @Composable
 fun AppNavigation() {
@@ -12,6 +13,9 @@ fun AppNavigation() {
     NavHost(navController = navController, startDestination = "login"){ //Recibe un controlador como parámetro y la ruta que iniciará por default (En el NavHost se ponen las rutas)
         composable(Routes.LOGIN_SCREEN){ //Aquí va la funcion
             LoginScreen({navController.navigate(Routes.POKEMON_LIST_SCREEN)})
+        }
+        composable(Routes.POKEMON_LIST_SCREEN){
+            PokemonScreens()
         }
     }
 
