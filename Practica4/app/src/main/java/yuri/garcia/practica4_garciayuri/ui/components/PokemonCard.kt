@@ -73,6 +73,7 @@ fun PokemonCard(pokemon: Pokemon){
 @Composable
 fun PokemonCardPreview(){
     PokemonCard(
-        Pokemon(1, "Zeraora", 807, "Eléctrico", 1.5, 44.5, R.drawable.zeraora)
+        Pokemon(1, "Zeraora", 807, "Eléctrico", 1.5, 44.5, R.drawable.zeraora,
+            "Las almohadillas de sus patas desprenden descargas eléctricas. Cuando corre, hace que los rayos caigan y que los truenos resuenen.")
     )
 }
